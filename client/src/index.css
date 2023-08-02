@@ -39,6 +39,29 @@ a{
   font-size: 40px;
 }
 
+.topNav{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 65px;
+  padding-top: 5px;
+  padding-right: 50px;
+  gap: 20px;
+  color: #ffff;
+  background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80);
+}
+
+.topNav > img {
+  width: 70px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 4px 2px black;
+}
+
+.topNav > h1{
+  margin-left: 10px;
+  font-weight: 400;
+}
+
 .navbar {
   transition: all linear 200ms;
   display: flex;
@@ -59,7 +82,7 @@ a{
 }
 
 .navbar > a:hover{
-  color: #dddddd;
+  color: #cccccc;
 }
 
 .navbar > button {
@@ -147,6 +170,7 @@ a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .postPreview > img{
@@ -240,13 +264,6 @@ a{
   margin: 5px;
 }
 
-.profile > h1{
-  font-family: 'Pangolin', cursive;
-  text-align: center;
-  text-decoration: underline;
-  padding: 10px;
-}
-
 .pfpDiv{
   padding-top: 15px;
 }
@@ -287,6 +304,12 @@ a{
   padding-left: 20%;
 }
 
+.profile > h1{
+  text-align: center;
+  text-decoration: underline;
+  padding: 10px;
+}
+
 .profile > p {
   padding-right: 160px;
   margin-bottom: -25px;
@@ -310,6 +333,12 @@ a{
   color: #ffffff;
   border-radius: 10px;
   font-weight: 600;
+  transition: all linear 100ms;
+}
+
+.makePostBtn:hover{
+  background-color: #10821f;
+  box-shadow: 0px 0px 5px 2px green;
 }
 
 .profile > h3{
@@ -342,7 +371,7 @@ a{
 }
 
 .postDetails{
-  padding-left: 21%;
+  padding-left: 30%;
   padding-right: 10%;
 }
 
@@ -614,7 +643,7 @@ a{
 
 
 /* Phone Screen */
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 750px){
 
   .navbar{
     width: 100%;
@@ -711,6 +740,21 @@ a{
 
   .logo{
     font-size: 40px;
+    margin: 0 -50px;
   }
 
+  .logo > span {
+     font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .logo{
+    font-size: 35px;
+    margin: 0 -50px;
+  }
+
+  .logo > span{
+    font-size: 25px;
+  }
 }

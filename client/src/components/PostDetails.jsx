@@ -14,7 +14,7 @@ const PostDetails = () => {
         like, 
         unLike,
         comments,
-        imgs
+        imgs,
     } = useContext(UserContext)
     const navigate = useNavigate()
     let {postId} = useParams()
@@ -65,7 +65,7 @@ const PostDetails = () => {
                         <button className="likeBtn" onClick={likes}>
                         {likesFilter.length === 1 ? <span style={{color: 'green', fontSize: '25px'}} className="material-symbols-outlined">thumb_up</span> 
                         :
-                        <span style={{fontSize: '25'}} className="material-symbols-outlined">thumb_up</span>}</button>
+                        <span style={{fontSize: '25px'}} className="material-symbols-outlined">thumb_up</span>}</button>
                         <span>{foundPost.likes.length}</span>
                     </div>
                     

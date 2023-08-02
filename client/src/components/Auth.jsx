@@ -37,7 +37,7 @@ const Auth = () => {
 
     return(
         <div className='auth'>
-            <h1 className='logo'>Nature Hub<span class="material-symbols-outlined">forest</span></h1>
+            <h1 className='logo'>Nature Hub<span className="material-symbols-outlined">forest</span></h1>
             {!toggle ?
                 <>
                     <AuthForm

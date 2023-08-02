@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext, UserProvider } from "../context/UserProvider";
+import { UserContext } from "../context/UserProvider";
 import PostList from "./PostList";
 
 const Profile = () => {
@@ -41,6 +41,7 @@ const Profile = () => {
             </div> 
             :
             <form onSubmit={handleSubmit} className="pfpForm">
+                <h5 style={{paddingBottom: '5px'}}>Update Profile Picture:</h5>
                 <input 
                 type="text"
                 value={pfp.profilePic}

@@ -70,6 +70,7 @@ const UserProvider = (props) => {
     const updatePfp = (userId, pfp) => {
         userAxios.put(`/proxy/auth/update/${userId}`, pfp)
         .then(res => {
+            console.log(res)
             setUserState(prevState => ({
                 ...prevState,
                 user: res.data

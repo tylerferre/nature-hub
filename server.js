@@ -4,9 +4,11 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt } = require('express-jwt')
 require('dotenv').config()
+const path = require('path')
 
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
     'mongodb://localhost:27017/nature-hub-db',
@@ -25,6 +27,10 @@ app.use((err, req, res, next) => {
         res.status(err.status)
     }
     return res.send({errMsg: err.message})
+})
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })
 
 app.listen(9000, () => {

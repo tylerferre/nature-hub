@@ -60,7 +60,7 @@ const PostForm = () => {
                     name='imgUrl'
                     value={inputs.imgUrl}
                     onChange={handleChange}
-                    placeholder='Image'
+                    placeholder='Image Url'
                     required
                 />
                 <button>Post</button>

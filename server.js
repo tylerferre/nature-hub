@@ -8,7 +8,7 @@ const path = require('path')
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "client", "dist")))
 
 mongoose.connect(
     'mongodb://localhost:27017/nature-hub-db',

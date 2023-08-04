@@ -4,14 +4,16 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt } = require('express-jwt')
 require('dotenv').config()
+uri = process.env.URI
 const path = require('path')
+process.env.SECRET
 
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "dist")))
 
 mongoose.connect(
-    'mongodb://localhost:27017/nature-hub-db',
+    uri,
     () => console.log('Connected to DB')
 )
 

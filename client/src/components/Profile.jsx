@@ -7,7 +7,7 @@ const Profile = () => {
     const navigate =  useNavigate()
 
     const {
-        user: {username, profilePic, _id},
+        user: {username, profilePic, _id, isAdmin},
         posts,
         updatePfp
     } = useContext(UserContext)
@@ -53,7 +53,11 @@ const Profile = () => {
             </form>
             }
 
-            <h1>{username}</h1>
+            {isAdmin? <h1 style={{textDecoration: 'none'}}><span style={{textDecoration: 'underline'}}>{username}</span>
+            <span style={{fontSize: '14px', color: 'grey'}}> admin</span>
+            </h1> 
+            :
+            <h1>{username}</h1>}
             <button className="makePostBtn" onClick={()=> navigate('/post')}>Make a post!</button>
             <h3>Your Posts</h3>
             <PostList posts={posts}/>

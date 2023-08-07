@@ -68,4 +68,17 @@ authRouter.put('/update/:userId', (req, res, next) => {
     )
 })
 
+// authRouter.delete('/delete/:userId', (req, res, next) => {
+//     User.findOneAndDelete(
+//         {_id: req.params.userId},
+//         (err, deletedUser) => {
+//             if(err){
+//                 res.status(500)
+//                 return next(err)
+//             }
+//             return res.status(200).send(`${deletedUser.username} has been deleted `)
+//         }
+//     )
+// })
+
 module.exports = authRouter

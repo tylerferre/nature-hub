@@ -13,38 +13,41 @@ function App() {
   const {token, logout} = useContext(UserContext)
 
   return (
-    <div className='App'>
+    <div>
       {token && <Navbar logout={logout}/>}
-      <Routes>
-        <Route
-          path='/'
-          element={token ? <Navigate to='/profile'/> : <Auth/>}
-        />
-        <Route 
-          path='/profile'
-          element={<ProtectedRoutes token={token} redirect='/'>
-            <Profile/>
-          </ProtectedRoutes>}
-        />
-        <Route 
-          path='/public'
-          element={<ProtectedRoutes token={token} redirect='/'>
-            <Public/>
-          </ProtectedRoutes>}
-        />
-        <Route
-          path='/post'
-          element={<ProtectedRoutes token={token} redirect='/'>
-            <PostForm/>
-          </ProtectedRoutes>}
-        />
-        <Route
-          path='/posts/:postId'
-          element={<ProtectedRoutes token={token} redirect='/'>
-            <PostDetails/>
-          </ProtectedRoutes>}
-        />
-      </Routes>
+      <div className={token ? 'App' : ''}>
+        
+        <Routes>
+          <Route
+            path='/'
+            element={token ? <Navigate to='/profile'/> : <Auth/>}
+          />
+          <Route 
+            path='/profile'
+            element={<ProtectedRoutes token={token} redirect='/'>
+              <Profile/>
+            </ProtectedRoutes>}
+          />
+          <Route 
+            path='/public'
+            element={<ProtectedRoutes token={token} redirect='/'>
+              <Public/>
+            </ProtectedRoutes>}
+          />
+          <Route
+            path='/post'
+            element={<ProtectedRoutes token={token} redirect='/'>
+              <PostForm/>
+            </ProtectedRoutes>}
+          />
+          <Route
+            path='/posts/:postId'
+            element={<ProtectedRoutes token={token} redirect='/'>
+              <PostDetails/>
+            </ProtectedRoutes>}
+          />
+        </Routes>
+      </div>
     </div>
   )
 }

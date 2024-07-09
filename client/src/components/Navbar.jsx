@@ -7,9 +7,9 @@ const Navbar = (props) => {
     const {getUserPosts, getPublicPosts} = useContext(UserContext)
     return(
         <div className='navbar'>
-             <button onClick={()=> navigate(-1)}><span className="material-symbols-outlined">arrow_back</span></button>
+             {/* <button onClick={()=> navigate(-1)}><span className="material-symbols-outlined">arrow_back</span></button> */}
+             <button onClick={()=> navigate('/post')}><span className="material-symbols-outlined">add_circle</span></button>
             <Link to='/profile'><span onClick={getUserPosts}><span className="material-symbols-outlined">person</span></span></Link>
-            <button onClick={()=> navigate('/post')}><span className="material-symbols-outlined">add_circle</span></button>
             <Link to='/public'><span onClick={getPublicPosts}><span className="material-symbols-outlined">group</span></span></Link>
             <button onClick={props.logout}><span className="material-symbols-outlined">logout</span></button>
         </div>

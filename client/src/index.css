@@ -11,19 +11,29 @@
 body{
   margin: 0;
   cursor: default;
-  background-color: #f4f4d8;
+  /* background-color: #3e5740; */
+  background-color: rgb(229, 229, 229);
 }
 
 body::-webkit-scrollbar{
   display: none;
 }
 
+.App{
+  width: 60%;
+  height: 100vh;
+  box-shadow: 0px 0px 8px 2px grey;
+  margin: auto;
+  background-color: white;
+}
+
 button{
   cursor: pointer;
-  background-color: #63482f;
-  border-radius: 10px;
+  background-color: #3e5740;
+  border-radius: 5px;
+  border: none;
   color:#ffffff;
-  padding: 2px;
+  padding: 5px;
 }
 
 a{
@@ -65,14 +75,15 @@ a{
 .navbar {
   transition: all linear 200ms;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
-  position: fixed;
   align-items: center;
   padding: 50px 0;
-  height: 100%;
-  width: 20%;
-  background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80);
+  height: 20px;
+  width: 100%;
+  background-color: #3e5740;
+  box-shadow: 0px 1px 6px 1px grey;
+  /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
 }
 
 .navbar > a {
@@ -101,31 +112,36 @@ a{
   flex-direction: column;
   height: 100vh;
   padding: 70px;
-  background:  url(http://www.csszengarden.com/214/bamboo.png);
+  background-color: #3e5740;
+
+  /* background: no-repeat url(http://www.csszengarden.com/214/bamboo.png); */
 }
 
 .logo{
-  font-family: 'Slackside One', cursive;
+  font-family: "Wittgenstein", serif;
   font-size: 65px;
-  text-shadow: 2px 2px #0f711c;
+  text-shadow: 2px 2px #163714;
+  color: white;
 }
 
 .auth > p {
   margin: 15px;
   text-decoration: underline;
   cursor: pointer;
-  color: #63482f;
+  font-family: "Wittgenstein", serif;
+  color: #fffdfd;
 }
 
 .auth > form {
-  border: 1px solid #c9c3b8;
+  border: 1px solid #ffffff;
   padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  background-color: #f0f0ca;
+  background-color: #ffffff;
   margin-top: 80px;
-  background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80);
+  box-shadow: 0px 0px 10px 1px #2a2a2a;
+  /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
 }
 
 .auth > form > p {
@@ -137,11 +153,13 @@ a{
 .auth > form > button {
   margin: 15px 8px;
   padding: 8px;
-  border-radius: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #cecece;
 }
 
 .auth > form > button{
-  background-color: #63482f;
+  background-color: #3e5740;
   color: white;
 }
 
@@ -155,7 +173,6 @@ a{
   display: flex;
   flex-direction: column;
   align-items:center;
-  padding-left: 20%;
   padding-top: 50px;
 }
 
@@ -198,28 +215,31 @@ a{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  border: 2px solid #63482f;
-  background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80);
+  box-shadow: 0 0 8px 1px grey;
+  /* border: 2px solid #63482f; */
+  /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
 }
 
 .postForm > input{
+  background-color: #cecece;
   height: 30px;
   width: 250px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
 .postForm > input::placeholder{
-  color: #909090;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .postForm > input:focus{
-  background-color: #63482fca;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .postForm > button{
-  background: linear-gradient(5deg, #63482f, #302012);
+  /* background: linear-gradient(5deg, #63482f, #302012); */
+  background-color: #3e5740;
   color: #ffffff;
   padding: 2px;
   border-radius: 10px;
@@ -301,23 +321,28 @@ a{
 
 .profile{
   text-align: center;
-  padding-left: 20%;
 }
 
-.profile > h1{
+/* .profileInfo{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+} */
+
+.profileInfo > h1{
   text-align: center;
   text-decoration: underline;
   padding: 10px;
 }
 
-.profile > p {
+.profileInfo > p {
   padding-right: 160px;
   margin-bottom: -25px;
   padding-top: 15px;
   cursor: pointer;
 }
 
-.profile > p > span{
+.profileInfo > p > span{
   background: linear-gradient(90deg, #1c721d, rgb(26, 185, 26));
   font-size: 15px;
   color: white;
@@ -329,11 +354,12 @@ a{
 .makePostBtn{
   margin: 10px;
   background-color: #1c721d;
-  padding: 5px;
+  padding: 8px;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 600;
   transition: all linear 100ms;
+  border: none;
 }
 
 .makePostBtn:hover{
@@ -341,12 +367,8 @@ a{
   box-shadow: 0px 0px 5px 2px green;
 }
 
-.profile > h3{
+.profileInfo > h3{
   text-decoration: underline;
-}
-
-.public{
-  padding-left: 20%;
 }
 
 .public > h3{
@@ -371,8 +393,8 @@ a{
 }
 
 .postDetails{
-  padding-left: 30%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .postDetails > h3{
@@ -438,7 +460,7 @@ a{
   width: 550px;
   border-radius: 10px;
   padding: 5px;
-  background-color: #eceace;
+  background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
 }
@@ -456,6 +478,8 @@ a{
   height: 25px;
   padding: 5px;
   border-radius: 5px;
+  border: none;
+  background-color: #cecece;
 }
 
 .commentForm > button {
@@ -464,7 +488,9 @@ a{
   border-radius: 5px;
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, #227d24, #10380a);
+  /* background: linear-gradient(145deg, #227d24, #10380a); */
+  background-color: #3e5740;
+  border: none;
   color: #ffffff;
 }
 
@@ -518,7 +544,7 @@ a{
   width: fit-content;
   border-radius: 10px;
   padding: 5px;
-  background-color: #eceace;
+  background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
 }
@@ -542,7 +568,9 @@ a{
   border-radius: 5px;
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, #227d24, #10380a);
+  background-color: #3e5740;
+  border: none;
+  /* background: linear-gradient(145deg, #227d24, #10380a); */
   color: #ffffff;
 }
 
@@ -625,7 +653,8 @@ a{
   margin-right: auto;
   padding: 10px;
   width: 350px;
-  background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80);
+  background-color: #000000;
+  /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
   color: #ffffff;
   text-shadow: 2px 2px black;
 }
@@ -645,6 +674,11 @@ a{
 /* Phone Screen */
 @media only screen and (max-width: 750px){
 
+  .App{
+    width: 100%;
+    box-shadow: none;
+  }
+
   .navbar{
     width: 100%;
     position: fixed;
@@ -657,6 +691,7 @@ a{
     height: 65px;
     font-size: 15px;
     padding: 0;
+    box-shadow: none;
   }
 
   .navbar:hover{

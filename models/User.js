@@ -13,6 +13,17 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+    },
+    email: {
+        type: String,
+        required: true
+    },
     memberSince: {
         type: Date,
         default: Date.now

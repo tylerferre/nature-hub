@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 
 const Posts = (props) => {
 
-    const date = props.createdAt.split('').splice(0, 10).join('')
+    const date = props.createdAt.split('').splice(0, 10).join('');
 
     return(
         <div className="post">
@@ -22,4 +22,4 @@ const Posts = (props) => {
     )
 }
 
-export default Posts
+export default Posts;

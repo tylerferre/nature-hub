@@ -1,5 +1,5 @@
-import React from 'react'
-import Posts from './Posts'
+import React from 'react';
+import Posts from './Posts';
 
 const PostList = (props) => {
     return(
@@ -9,4 +9,4 @@ const PostList = (props) => {
     )
 }
 
-export default PostList
+export default PostList;

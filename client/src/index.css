@@ -24,7 +24,7 @@ body::-webkit-scrollbar{
   height: 100vh;
   box-shadow: 0px 0px 8px 2px grey;
   margin: auto;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 button{
@@ -163,6 +163,30 @@ a{
   color: white;
 }
 
+.passDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.passDiv > input{
+  margin: 15px 8px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #cecece;
+  width: 200px;
+}
+
+.passDiv > span{
+  position: relative;
+  left: -30px;
+  margin: -12px;
+  cursor: pointer;
+  color: grey;
+}
+
 .postList {
   display: flex;
   justify-content: center;
@@ -178,7 +202,7 @@ a{
 
 .postPreview{
   border-radius: 10px;
-  border: 1px solid #236a18;
+  border: 1px solid #163714;
   height: fit-content;
   padding: 15px;
   width: 250px;
@@ -203,7 +227,7 @@ a{
 
 .imgPreview{
   width: 80%;
-  background-color: #1c721d;
+  background-color: #163714;
   height: 150px;
   border-radius: 10px;
 }
@@ -220,7 +244,7 @@ a{
   /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
 }
 
-.postForm > input{
+.postForm .input-text{
   background-color: #cecece;
   height: 30px;
   width: 250px;
@@ -229,11 +253,11 @@ a{
   border: none;
 }
 
-.postForm > input::placeholder{
+.postForm .input-text::placeholder{
   color: rgba(0, 0, 0, 0.5);
 }
 
-.postForm > input:focus{
+.postForm .input-text:focus{
   color: rgb(0, 0, 0);
 }
 
@@ -244,6 +268,32 @@ a{
   padding: 2px;
   border-radius: 10px;
   height: 30px;
+}
+
+.file-input {
+  height: 50px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.file-input::file-selector-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #163714;
+  width: 250px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #163714;
+  background-color: white;
+  cursor: pointer;
 }
 
 .post {
@@ -320,17 +370,17 @@ a{
 }
 
 .profile{
-  text-align: center;
+  padding: 10px 30px;
 }
 
-/* .profileInfo{
+.profileInfo{
   display: flex;
   flex-direction: row;
   padding: 10px;
-} */
+  gap: 40px;
+}
 
 .profileInfo > h1{
-  text-align: center;
   text-decoration: underline;
   padding: 10px;
 }
@@ -349,22 +399,27 @@ a{
   box-shadow: 1px 1px 1px 1px black;
   border-radius: 5px;
   padding: 2px;
+  display: none;
+}
+
+.user-info-div {
+
 }
 
 .makePostBtn{
   margin: 10px;
-  background-color: #1c721d;
+  background-color: white;
   padding: 8px;
-  color: #ffffff;
+  color: #3e5740;
+  border: 1px solid #3e5740;
   border-radius: 5px;
   font-weight: 600;
-  transition: all linear 100ms;
-  border: none;
+  transition: all linear 150ms;
 }
 
 .makePostBtn:hover{
-  background-color: #10821f;
-  box-shadow: 0px 0px 5px 2px green;
+  background-color: #3e5740;
+  color: white;
 }
 
 .profileInfo > h3{
@@ -668,6 +723,15 @@ a{
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+}
+
+.settings {
+  width: 300px;
+  height: 450px;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 8px 1px grey;
+  border-radius: 12px;
 }
 
 

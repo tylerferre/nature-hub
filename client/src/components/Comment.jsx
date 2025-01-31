@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserProvider";
 
 const Comment = (props) => {
 
-    const {deleteComment, user} = useContext(UserContext)
+    const {deleteComment, user} = useContext(UserContext);
 
     return(
         <div className="comment">
@@ -14,4 +14,4 @@ const Comment = (props) => {
     )
 }
 
-export default Comment
+export default Comment;

@@ -19,9 +19,10 @@ const UserProvider = (props) => {
         token : localStorage.getItem('token') || '',
         posts: []
     }
-    const [userState, setUserState] = useState(initState)
-    const [comments, setComments] = useState([])
-    const [imgs, setImgs] = useState([])
+    const [userState, setUserState] = useState(initState);
+    const [comments, setComments] = useState([]);
+    const [imgs, setImgs] = useState([]);
+    const [settings, setSettings] = useState(false);
 
     // Auth
 
@@ -219,6 +220,10 @@ const UserProvider = (props) => {
         .catch(err => console.log(err.response.data.errMsg))
     }
 
+    const Settings = () => {
+        setSettings(prevState => !prevState);
+    }
+
     return(
         <UserContext.Provider
             value={{
@@ -242,7 +247,9 @@ const UserProvider = (props) => {
                 deleteComment,
                 getImgs,
                 addImg,
-                deleteImg
+                deleteImg,
+                settings,
+                Settings
             }}
         >
             {props.children}

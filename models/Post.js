@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema 
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
     title: {
@@ -18,8 +18,8 @@ const postSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Comment'
     },
-    imgUrl: {
-        type: String,
+    imgFile: {
+        type: Object,
         required: true
     },
     user: {
@@ -35,6 +35,6 @@ const postSchema = new Schema({
         type: Date,
         default: Date.now
     }
-})
+});
 
-module.exports = mongoose.model('Post', postSchema)
+module.exports = mongoose.model('Post', postSchema);

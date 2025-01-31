@@ -1,68 +1,83 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from '../context/UserProvider'
 import { useNavigate } from 'react-router-dom'
 
 const initInputs = {
-        title: '',
-        description: '',
-        imgUrl: ''
-    }
+    title: '',
+    description: '',
+    imgFile: {}
+}
 
 const PostForm = () => {
     const navigate = useNavigate()
     const [inputs, setInputs] = useState(initInputs)
-    const {newPost, getUserPosts} = useContext(UserContext)
+    const [fileData, setFileData] = useState()
+    const { newPost, getUserPosts } = useContext(UserContext)
 
     const handleChange = (e) => {
-        const {name, value} = e.target
+        const { name, value } = e.target
         setInputs(prevState => ({
             ...prevState,
             [name]: value
         }))
     }
 
+    const handleFileChange = (e) => {
+            setFileData(e.target.files);
+            setInputs(prev => ({
+                ...prev,
+                imgFile: e.target.files 
+            }))
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        newPost(inputs)
-        setInputs(initInputs)
-        navigate('/profile')
-        getUserPosts()
+        // newPost(inputs)
+        // setInputs(initInputs)
+        // navigate('/profile')
+        // getUserPosts()
+        console.log(inputs)
     }
 
-    return(
+
+
+    return (
         <div className='postFormDiv'>
             <div className='postPreview'>
-                {inputs.imgUrl ? <img src={inputs.imgUrl}/> : <div className='imgPreview'></div>}
+                {fileData ? <img src={URL.createObjectURL(new Blob(fileData))} /> : <div className='imgPreview'></div>}
                 {inputs.title ? <h2>{inputs.title}</h2> : <h2>Title</h2>}
                 {inputs.description ? <p>{inputs.description}</p> : <p>Description</p>}
             </div>
-            
+
             <form className='postForm' onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
+                <input
+                    className='input-text'
+                    type="text"
                     name='title'
                     value={inputs.title}
                     onChange={handleChange}
                     placeholder='Title'
                     required
                 />
-                <input 
-                    type="text" 
+                <input
+                    className='input-text'
+                    type="text"
                     name='description'
                     value={inputs.description}
                     onChange={handleChange}
                     placeholder='Description'
                     required
                 />
-                <input 
-                    type="text" 
-                    name='imgUrl'
-                    value={inputs.imgUrl}
-                    onChange={handleChange}
-                    placeholder='Image Url'
+                <input
+                    type="file"
+                    name='file'
+                    className='file-input'
+                    accept=".jpg, .jpeg, .png"
+                    onChange={handleFileChange}
                     required
                 />
+
                 <button>Post</button>
             </form>
         </div>

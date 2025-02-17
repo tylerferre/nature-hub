@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import axios from 'axios'
-import { Navigate, useNavigate } from "react-router-dom";
+
 
 
 const UserContext = createContext()
@@ -248,8 +248,8 @@ const UserProvider = (props) => {
                 getImgs,
                 addImg,
                 deleteImg,
-                settings,
-                Settings
+                Settings,
+                settings
             }}
         >
             {props.children}

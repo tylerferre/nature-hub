@@ -9,7 +9,7 @@ import PostDetails from './components/PostDetails';
 import { UserContext } from './context/UserProvider';
 import ProtectedRoutes from './components/routes/ProtectedRoutes';
 import MobileNav from './components/navbar/MobileNav';
-import Settings from './components/settings';
+import Settings from './components/Settings';
 
 function App() {
   const {token, logout, settings} = useContext(UserContext);

@@ -23,65 +23,114 @@ const PostForm = () => {
     }
 
     const handleFileChange = (e) => {
-            setFileData(e.target.files);
-            setInputs(prev => ({
-                ...prev,
-                imgFile: e.target.files 
-            }))
+        setFileData(e.target.files);
+        setInputs(prev => ({
+            ...prev,
+            imgFile: e.target.files
+        }))
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // newPost(inputs)
-        // setInputs(initInputs)
-        // navigate('/profile')
-        // getUserPosts()
+        newPost(inputs)
+        setInputs(initInputs)
+        navigate('/profile')
+        getUserPosts()
         console.log(inputs)
     }
 
-
-
     return (
         <div className='postFormDiv'>
-            <div className='postPreview'>
-                {fileData ? <img src={URL.createObjectURL(new Blob(fileData))} /> : <div className='imgPreview'></div>}
-                {inputs.title ? <h2>{inputs.title}</h2> : <h2>Title</h2>}
-                {inputs.description ? <p>{inputs.description}</p> : <p>Description</p>}
-            </div>
 
             <form className='postForm' onSubmit={handleSubmit}>
-                <input
-                    className='input-text'
-                    type="text"
-                    name='title'
-                    value={inputs.title}
-                    onChange={handleChange}
-                    placeholder='Title'
-                    required
-                />
-                <input
-                    className='input-text'
-                    type="text"
-                    name='description'
-                    value={inputs.description}
-                    onChange={handleChange}
-                    placeholder='Description'
-                    required
-                />
-                <input
-                    type="file"
-                    name='file'
-                    className='file-input'
-                    accept=".jpg, .jpeg, .png"
-                    onChange={handleFileChange}
-                    required
-                />
+                <div className='post-form-top'>
+                    <div className='post-inputs'>
+                        <input
+                            className='input-text'
+                            type="text"
+                            name='title'
+                            value={inputs.title}
+                            onChange={handleChange}
+                            placeholder='Title'
+                            required
+                        />
+                        <input
+                            type="file"
+                            name='file'
+                            className='file-input'
+                            accept=".jpg, .jpeg, .png"
+                            onChange={handleFileChange}
+                            required
+                        />
+                    </div>
+                    <div className='postPreview'>
+                        {fileData ? <img src={URL.createObjectURL(new Blob(fileData))} /> : <div className='imgPreview'></div>}
+                        {/* {inputs.title ? <h2>{inputs.title}</h2> : <h2>Title</h2>}
+                        {inputs.description ? <p>{inputs.description}</p> : <p>Description</p>} */}
+                    </div>
+                </div>
 
-                <button>Post</button>
+                <div className='post-form-bottom'>
+                    <textarea
+                        className='input-description'
+                        type="text"
+                        name='description'
+                        value={inputs.description}
+                        onChange={handleChange}
+                        placeholder='Description'
+                        required
+                    />
+
+                    <button>Post</button>
+                </div>
+
             </form>
         </div>
     )
 }
+
+
+//     return (
+//         <div className='postFormDiv'>
+//             <div className='postPreview'>
+//                 {fileData ? <img src={URL.createObjectURL(new Blob(fileData))} /> : <div className='imgPreview'></div>}
+//                 {inputs.title ? <h2>{inputs.title}</h2> : <h2>Title</h2>}
+//                 {inputs.description ? <p>{inputs.description}</p> : <p>Description</p>}
+//             </div>
+
+//             <form className='postForm' onSubmit={handleSubmit}>
+//                 <input
+//                     className='input-text'
+//                     type="text"
+//                     name='title'
+//                     value={inputs.title}
+//                     onChange={handleChange}
+//                     placeholder='Title'
+//                     required
+//                 />
+//                 <input
+//                     className='input-text'
+//                     type="text"
+//                     name='description'
+//                     value={inputs.description}
+//                     onChange={handleChange}
+//                     placeholder='Description'
+//                     required
+//                 />
+//                 <input
+//                     type="file"
+//                     name='file'
+//                     className='file-input'
+//                     accept=".jpg, .jpeg, .png"
+//                     onChange={handleFileChange}
+//                     required
+//                 />
+
+//                 <button>Post</button>
+//             </form>
+//         </div>
+//     )
+// }
 
 export default PostForm

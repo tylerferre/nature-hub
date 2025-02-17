@@ -16,8 +16,7 @@ app.use(express.static(path.join(__dirname, "client", "dist")));
 
 mongoose.set('strictQuery', false);
 mongoose.connect(
-    // uri,
-    "mongodb+srv://tylerferre:hXq45dJcvmwJkGBN@cluster0.fvepsva.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    uri,
     () => console.log('Connected to DB')
 );
 

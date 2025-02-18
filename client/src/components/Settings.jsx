@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserProvider";
 
 const Settings = () => {
 
-    const {settings, logout} = useContext(UserContext);
+    const {settings, logout, Settings} = useContext(UserContext);
 
 
         const [copySuccess, setCopySuccess] = useState(false)

@@ -327,7 +327,7 @@ a{
   width: 100%;
   font-size: 20px;
   /* background: linear-gradient(5deg, #63482f, #302012); */
-} */
+}
 
 .file-input {
   height: 50px;
@@ -463,9 +463,9 @@ a{
   display: none;
 }
 
-.user-info-div {
+/* .user-info-div {
 
-}
+} */
 
 .makePostBtn{
   margin: 10px;

@@ -24,7 +24,7 @@ const conn = mongoose.connection;
 conn.once("open", function(){
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection("photos");
-})
+});
 
 
 app.use('/proxy/auth', require('./routes/authRouter.js'));

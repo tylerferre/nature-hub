@@ -330,7 +330,7 @@ a{
 }
 
 .file-input {
-  height: 50px;
+  height: 45px;
   width: 250px;
   text-align: center;
   border-radius: 8px;
@@ -794,6 +794,7 @@ a{
   right: 0;
   margin-inline: auto;
   top: 20%;
+  z-index: 1;
   background-color: white;
   box-shadow: 0 0 8px 1px grey;
   border-radius: 12px;
@@ -884,12 +885,9 @@ a{
     padding-bottom: 40px;
   }
 
-
-
   .imgPreview {
     width: 220px;
     height: 220px;
-    background-color: #163714;
     border-radius: 10px;
   }
   
@@ -907,7 +905,7 @@ a{
     left: 0;
     right: 0;
     margin-inline: auto;
-    top: 20%;
+    top: 10%;
     padding: 30px 50px;
   }
   

@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserProvider";
 
 const Settings = () => {
 
-    const {settings, logout, Settings} = useContext(UserContext);
+    const {logout, Settings} = useContext(UserContext);
 
 
         const [copySuccess, setCopySuccess] = useState(false)
@@ -21,7 +21,7 @@ const Settings = () => {
         <div className="settings">
             <h2>Settings</h2>
             <ul className="settings-list">
-                <button onClick={settings}><li>Back</li></button>
+                <button onClick={Settings}><li>Back</li></button>
                 <hr />
                 <button><li>Edit Profile</li></button>
                 <hr />

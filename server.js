@@ -6,7 +6,7 @@ const { expressjwt } = require('express-jwt');
 const path = require('path');
 const Grid = require('gridfs-stream');
 require('dotenv').config();
-const uri = process.env.URI
+const uri = process.env.URI;
 let gfs;
 
 app.use(express.json());

@@ -425,7 +425,7 @@ a{
 .profilePic{
   width: 160px;
   height: 160px;
-  border-radius: 30px;
+  border-radius: 50%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -762,17 +762,16 @@ a{
 
 .deleteForm {
   text-align: center;
-  border: 2px solid #302012;
+  border: 1px solid #3e5740;
   border-radius: 10px;
   height: 200px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
   width: 350px;
-  background-color: #000000;
+  background-color: #ffff;
   /* background-image: url(https://images.unsplash.com/photo-1629197520635-16570fbd0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JlZW4lMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80); */
-  color: #ffffff;
-  text-shadow: 2px 2px black;
+  color: black;
 }
 
 .deleteFormInfo {
@@ -784,6 +783,29 @@ a{
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+}
+
+.deleteFormBtns button:first-child {
+  background-color: white;
+  border: 1px solid #3e5740;
+  color: #3e5740;
+}
+
+.deleteFormBtns button:last-child {
+  background-color: white;
+  border: 1px solid #ca0000;
+  color: #ca0000;
+}
+
+.deleteFormBtns button:first-child {
+  background-color: white;
+  border: 1px solid #3e5740;
+  color: #3e5740;
+}
+
+.deleteFormBtns button:last-child:hover{
+  background-color: #ca0000;
+  color: white;
 }
 
 .settings {

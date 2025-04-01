@@ -9,7 +9,8 @@ const Profile = () => {
     const {
         user: { username, profilePic, _id, isAdmin },
         posts,
-        updatePfp
+        updatePfp,
+        getUserPosts
     } = useContext(UserContext);
     // const inintInputs = { profilePic: '' };
     // const [pfp, setPfp] = useState(false);
@@ -33,6 +34,10 @@ const Profile = () => {
     //     setInputs(inintInputs);
     //     setPfp(false);
     // };
+
+    useEffect(() => {
+        getUserPosts();
+    }, []);
 
     return (
         <div className="profile">

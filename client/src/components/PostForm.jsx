@@ -6,13 +6,13 @@ const initInputs = {
     title: '',
     description: '',
     imgFile: {}
-}
-
+};
+``
 const PostForm = () => {
-    const navigate = useNavigate()
-    const [inputs, setInputs] = useState(initInputs)
-    const [fileData, setFileData] = useState()
-    const { newPost, getUserPosts } = useContext(UserContext)
+    const navigate = useNavigate();
+    const [inputs, setInputs] = useState(initInputs);
+    const [fileData, setFileData] = useState();
+    const { newPost, getUserPosts } = useContext(UserContext);
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -33,11 +33,11 @@ const PostForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        newPost(inputs)
-        setInputs(initInputs)
-        navigate('/profile')
-        getUserPosts()
-        console.log(inputs)
+        newPost(inputs);
+        setInputs(initInputs);
+        navigate('/profile');
+        getUserPosts();
+        console.log(inputs);
     }
 
     return (

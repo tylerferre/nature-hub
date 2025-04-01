@@ -32,8 +32,7 @@ app.use('/proxy/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS2
 app.use('/proxy/api/post', require('./routes/postRouter.js'));
 app.use('/proxy/api/comment', require('./routes/commentRouter.js'));
 app.use('/proxy/api/img', require('./routes/imgRouter.js'));
-app.use('/proxy/upload', require('./routes/upload.js'));
-
+app.use('/proxy/file', require('./routes/upload.js'));
 
 app.use((err, req, res, next) => {
     console.log(err)

@@ -8,15 +8,15 @@ const storage = new GridFsStorage({
         const match = ["image/png", "image/jpeg"];
 
         if(match.indexOf(file.mimetype) === -1){
-            const filename = `${Date.now()}-any-name-${file.orignialname}`;
+            const filename = file.orignialname;
             return filename;
         }
 
         return {
             bucketName: "photos",
-            filename: `${Date.now}-any-name-${file.orignialname}`
+            filename: file.orignialname
         }
     }
 });
 
-module.exports = multer({storage});
+module.exports = multer({storage})

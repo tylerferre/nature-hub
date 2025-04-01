@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserProvider'
 import PostList from './PostList'
 
 const Public = () => {
     
-    const {posts} = useContext(UserContext)
+    const { posts, getPublicPosts } = useContext(UserContext)
+
+    useEffect(() => {
+        getPublicPosts();
+    }, []);
 
     return(
         <div className='public'>

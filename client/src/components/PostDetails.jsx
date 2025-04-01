@@ -116,7 +116,7 @@ const PostDetails = () => {
                         navigate(-1)
                         setToggleDelete(false)
                         deletePost(foundPost._id)
-                        }}style={{backgroundColor: '#ca0000'}}>Delete</button>
+                        }}>Delete</button>
                     </div>
                 </div> 
             </div>
